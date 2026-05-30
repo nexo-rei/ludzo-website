@@ -4,107 +4,77 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 interface LudzoLogoProps {
-  size?: "sm" | "md" | "lg" | "xl";
+  size?: "xs" | "sm" | "md" | "lg" | "xl";
   className?: string;
   href?: string;
   showTagline?: boolean;
 }
 
-const sizes = {
-  sm: { w: 90, h: 28, font: 22 },
-  md: { w: 120, h: 36, font: 28 },
-  lg: { w: 160, h: 48, font: 38 },
-  xl: { w: 220, h: 68, font: 52 },
-};
+export function LudzoLogo({ size = "md", className, href = "/", showTagline = false }: LudzoLogoProps) {
+  const fontSize = { xs: 16, sm: 20, md: 26, lg: 34, xl: 46 }[size];
+  const iconSize = { xs: 18, sm: 22, md: 28, lg: 36, xl: 48 }[size];
+  const gap      = { xs: 7,  sm: 8,  md: 10, lg: 12, xl: 14 }[size];
 
-export function LudzoLogo({
-  size = "md",
-  className,
-  href = "/",
-  showTagline = false,
-}: LudzoLogoProps) {
-  const s = sizes[size];
-
-  const logo = (
-    <div className={cn("flex flex-col items-start select-none", className)}>
-      <svg
-        width={s.w}
-        height={s.h}
-        viewBox={`0 0 ${s.w} ${s.h}`}
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-        aria-label="Ludzo logo"
-      >
-        <defs>
-          <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#c084fc" />
-            <stop offset="50%" stopColor="#a855f7" />
-            <stop offset="100%" stopColor="#7c3aed" />
-          </linearGradient>
-          <filter id="logoGlow">
-            <feGaussianBlur stdDeviation="2" result="coloredBlur" />
-            <feMerge>
-              <feMergeNode in="coloredBlur" />
-              <feMergeNode in="SourceGraphic" />
-            </feMerge>
-          </filter>
-          {/* Geometric L icon mark */}
-          <linearGradient id="iconGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#e879f9" />
-            <stop offset="100%" stopColor="#7c3aed" />
-          </linearGradient>
-        </defs>
-
-        {/* Icon mark — hexagonal with L */}
-        <g filter="url(#logoGlow)">
-          <polygon
-            points={`${s.h * 0.12},${s.h * 0.28} ${s.h * 0.5},${s.h * 0.04} ${s.h * 0.88},${s.h * 0.28} ${s.h * 0.88},${s.h * 0.72} ${s.h * 0.5},${s.h * 0.96} ${s.h * 0.12},${s.h * 0.72}`}
-            fill="url(#iconGrad)"
-            opacity="0.9"
-          />
-          {/* L shape inside hexagon */}
-          <rect
-            x={s.h * 0.28}
-            y={s.h * 0.22}
-            width={s.h * 0.1}
-            height={s.h * 0.5}
-            fill="white"
-            rx="2"
-          />
-          <rect
-            x={s.h * 0.28}
-            y={s.h * 0.62}
-            width={s.h * 0.32}
-            height={s.h * 0.1}
-            fill="white"
-            rx="2"
-          />
-        </g>
-
-        {/* LUDZO wordmark */}
-        <text
-          x={s.h + s.h * 0.22}
-          y={s.h * 0.73}
-          fontFamily="'Syne', 'Arial Black', sans-serif"
-          fontWeight="800"
-          fontSize={s.font}
-          fill="url(#logoGrad)"
-          filter="url(#logoGlow)"
-          letterSpacing="2"
+  const content = (
+    <div className={cn("flex flex-col gap-0.5", className)}>
+      <div className="flex items-center" style={{ gap }}>
+        {/* Hexagon icon mark */}
+        <svg
+          width={iconSize}
+          height={iconSize}
+          viewBox="0 0 40 40"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+          style={{ flexShrink: 0 }}
         >
-          LUDZO
-        </text>
-      </svg>
+          <defs>
+            <linearGradient id="llogo-g" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stopColor="#c4b5fd" />
+              <stop offset="100%" stopColor="#7c3aed" />
+            </linearGradient>
+          </defs>
+          <polygon points="20,2 37,11 37,29 20,38 3,29 3,11" fill="url(#llogo-g)" />
+          {/* L letter */}
+          <rect x="13" y="11" width="5" height="18" rx="1.5" fill="white" />
+          <rect x="13" y="24" width="14" height="5" rx="1.5" fill="white" />
+        </svg>
+
+        {/* Wordmark — fixed width so it never clips */}
+        <span
+          style={{
+            fontFamily: "'Space Grotesk', 'Inter', sans-serif",
+            fontWeight: 700,
+            fontSize,
+            letterSpacing: "-0.03em",
+            lineHeight: 1,
+            background: "linear-gradient(135deg, #e2d9ff 0%, #8B5CF6 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+            backgroundClip: "text",
+            whiteSpace: "nowrap",
+            display: "inline-block",
+            minWidth: `${fontSize * 3.2}px`,
+          }}
+          aria-label="Ludzo"
+        >
+          Ludzo
+        </span>
+      </div>
 
       {showTagline && (
         <span
-          className="text-xs font-mono tracking-[0.3em] uppercase mt-0.5"
           style={{
-            color: "rgba(168,85,247,0.7)",
-            paddingLeft: `${s.h + s.h * 0.22}px`,
+            fontFamily: "'JetBrains Mono', monospace",
+            fontSize: Math.max(9, fontSize * 0.38),
+            letterSpacing: "0.2em",
+            color: "rgba(167,139,250,0.6)",
+            textTransform: "uppercase",
+            paddingLeft: iconSize + gap,
+            whiteSpace: "nowrap",
           }}
         >
-          Play. Earn. Dominate.
+          Play · Earn · Dominate
         </span>
       )}
     </div>
@@ -112,11 +82,10 @@ export function LudzoLogo({
 
   if (href) {
     return (
-      <Link href={href} className="focus-visible:outline-none group">
-        {logo}
+      <Link href={href} className="focus-visible:outline-none" aria-label="Ludzo home">
+        {content}
       </Link>
     );
   }
-
-  return logo;
+  return content;
 }
