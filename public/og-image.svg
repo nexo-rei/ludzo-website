@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none">
+  <rect width="1200" height="630" fill="#08040f"/>
+  <radialGradient id="bg" cx="50%" cy="40%" r="60%">
+    <stop offset="0%" stop-color="#7c3aed" stop-opacity="0.4"/>
+    <stop offset="100%" stop-color="#08040f" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e879f9"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </linearGradient>
+  </defs>
+  <!-- Icon -->
+  <polygon points="520,160 600,110 680,160 680,260 600,310 520,260" fill="url(#g)" opacity="0.9"/>
+  <rect x="553" y="142" width="20" height="96" rx="4" fill="white"/>
+  <rect x="553" y="214" width="64" height="24" rx="4" fill="white"/>
+  <!-- Wordmark -->
+  <text x="720" y="240" font-family="Arial Black,sans-serif" font-weight="900" font-size="80" fill="url(#g)" letter-spacing="4">LUDZO</text>
+  <text x="720" y="290" font-family="Arial,sans-serif" font-size="24" fill="rgba(245,240,255,0.5)" letter-spacing="8">PLAY · EARN · DOMINATE</text>
+  <text x="600" y="380" text-anchor="middle" font-family="Arial,sans-serif" font-size="22" fill="rgba(168,85,247,0.7)" letter-spacing="3">TELEGRAM GAMING PLATFORM · LAUNCHING Q3 2025</text>
+  <text x="600" y="430" text-anchor="middle" font-family="Arial,sans-serif" font-size="18" fill="rgba(245,240,255,0.3)">selixo.in</text>
+</svg>
