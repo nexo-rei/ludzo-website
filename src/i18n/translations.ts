@@ -11,7 +11,7 @@ export const translations = {
       joinTelegram: "Join Telegram",
     },
     hero: {
-      badge: "Coming Soon — Q3 2025",
+      badge: "Coming Soon — July 2026",
       title: "Play Games.",
       titleAccent: "Earn Rewards.",
       titleEnd: "Dominate.",
@@ -192,7 +192,7 @@ export const translations = {
         },
         {
           q: "When does Ludzo launch?",
-          a: "Ludzo is launching in Q3 2025. Join the waitlist to be notified the moment we go live and get early access.",
+          a: "Ludzo is launching in July 2026. Join the waitlist to be notified the moment we go live and get early access.",
         },
         {
           q: "Can I withdraw my earned coins?",
@@ -243,7 +243,7 @@ export const translations = {
         legal: "Legal",
         social: "Follow Us",
       },
-      copyright: "© 2025 Ludzo. All rights reserved.",
+      copyright: "© 2026 Ludzo. All rights reserved.",
       madeWith: "Built with passion for gamers worldwide.",
     },
   },
@@ -257,7 +257,7 @@ export const translations = {
       joinTelegram: "टेलीग्राम जॉइन करें",
     },
     hero: {
-      badge: "जल्द आ रहा है — Q3 2025",
+      badge: "जल्द आ रहा है — July 2026",
       title: "गेम खेलें।",
       titleAccent: "रिवॉर्ड कमाएं।",
       titleEnd: "राज करें।",
@@ -437,7 +437,7 @@ export const translations = {
         },
         {
           q: "Ludzo कब लॉन्च होगा?",
-          a: "Ludzo Q3 2025 में लॉन्च होगा। वेटलिस्ट जॉइन करें और अर्ली एक्सेस पाएं।",
+          a: "Ludzo July 2026 में लॉन्च होगा। वेटलिस्ट जॉइन करें और अर्ली एक्सेस पाएं।",
         },
         {
           q: "क्या मैं कॉइन्स विदड्रॉ कर सकता हूँ?",
@@ -488,7 +488,7 @@ export const translations = {
         legal: "लीगल",
         social: "हमें फॉलो करें",
       },
-      copyright: "© 2025 Ludzo. सर्वाधिकार सुरक्षित।",
+      copyright: "© 2026 Ludzo. सर्वाधिकार सुरक्षित।",
       madeWith: "दुनिया भर के गेमर्स के लिए जुनून से बनाया गया।",
     },
   },
