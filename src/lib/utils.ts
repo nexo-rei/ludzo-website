@@ -41,7 +41,7 @@ export const siteConfig = {
     instagram: "https://instagram.com/ludzo",
     youtube: "https://youtube.com/@ludzo",
   },
-  launchDate: "Q3 2025",
+  launchDate: "July 2026",
   keywords: [
     "Ludzo",
     "Telegram gaming",
